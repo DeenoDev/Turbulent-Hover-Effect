@@ -5,9 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turbulent-Hover-Effect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <svg style="display: none;">
+  <defs>
+    <filter id="noise">
+      <feTurbulence
+        baseFrequency="0.7,0.8"
+        seed="0"
+        type="fractalNoise"
+        result="static"
+      >
+        <animate
+          attributeName="seed"
+          values="0;100"
+          dur="800ms"
+          repeatCount="1" 
+          begin="card.mouseenter"                           
+        />
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="static">
+        <animate
+          attributeName="scale"
+          values="0;40;0"
+          dur="800ms"
+          repeatCount="1" 
+          begin="card.mouseenter"                           
+        />
+      </feDisplacementMap>
+    </filter>  
+  </defs>
+</svg>
+
+<div id="card">
+  <img 
+    src="https://images.unsplash.com/photo-1679626951853-60e909d288ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80" 
+    alt="Neon sign in woods" 
+  />
+</div>
+
+
     
 </body>
 </html>
